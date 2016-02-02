@@ -87,7 +87,7 @@ castellatedMeshControls
     features
     (
         {
-            file "flange.extendedFeatureEdgeMesh";
+            file "water.extendedFeatureEdgeMesh";
             level 0;
         }
     );
@@ -105,7 +105,7 @@ castellatedMeshControls
 
     refinementSurfaces
     {
-        flange
+        water
         {
             // Surface-wise min and max refinement level
             level (2 2);
@@ -205,7 +205,7 @@ addLayersControls
     // Per final patch (so not geometry!) the layer information
     layers
     {
-        "flange_.*"
+        "water_.*"
         {
             nSurfaceLayers 1;
         }
