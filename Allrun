@@ -2,9 +2,6 @@
 # Source tutorial run functions
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
-# copy flange surface from resources directory
-cp /home/sid/Desktop/unh-aquaponics/flange.stl constant/triSurface/
-
 runApplication blockMesh
 runApplication surfaceFeatureExtract
 runApplication snappyHexMesh -overwrite
