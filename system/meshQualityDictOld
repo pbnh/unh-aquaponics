@@ -12,11 +12,11 @@ FoamFile
     class       dictionary;
     object      meshQualityDict;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#includeEtc "caseDicts/mesh/generation/meshQualityDict.cfg"
+// Include defaults parameters from master dictionary
+#includeEtc "caseDicts/meshQualityDict"
 
-//- minFaceWeight (0 -> 0.5)
-//minFaceWeight 0.02;
 
 // ************************************************************************* //

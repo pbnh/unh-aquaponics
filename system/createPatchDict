@@ -10,13 +10,20 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      meshQualityDict;
+    object      createPatchDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#includeEtc "caseDicts/mesh/generation/meshQualityDict.cfg"
+// Do a synchronisation of coupled points after creation of any patches.
+// Note: this does not work with points that are on multiple coupled patches
+//       with transformations (i.e. cyclics).
+pointSync false;
 
-//- minFaceWeight (0 -> 0.5)
-//minFaceWeight 0.02;
+// Patches to create. An empty patch list just removes patches with zero
+// faces from $FOAM_CASE/constant/polyMesh/boundary.
+patches
+(
+
+);
 
 // ************************************************************************* //
