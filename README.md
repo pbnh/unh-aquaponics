@@ -1,3 +1,3 @@
-This is a repository for OpenFOAM files for Project OASIS.
+# UNH Aquaponics OASIS project
 
-Sid edited this :)
+This is a repository for OpenFOAM case files for Project OASIS.
