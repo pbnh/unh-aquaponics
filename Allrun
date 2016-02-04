@@ -10,4 +10,7 @@ runApplication surfaceFeatureExtract
 runApplication snappyHexMesh -overwrite
 runApplication createPatch -overwrite
 
+# Copy initial conditions
+cp -rf 0.org 0
+
 runApplication $(getApplication)
