@@ -37,16 +37,16 @@ geometry
     }
 
     //- Refine a bit extra around the small centre hole
-    outletCylinder
+    outlet
     {
         type searchableCylinder;
         point1 (0.1397 0.1397 0);
         point2 (0.1397 0.1397 -0.0254);
 	radius 0.0127;
     }
-	
+
 //- Refine a bit extra around the small centre hole
-    inletCylinder
+    inlet
     {
         type searchableCylinder;
         point1 (0 0.1397 0.2286);
@@ -145,7 +145,7 @@ castellatedMeshControls
             mode inside;
             levels ((1E15 3));
         }
-	
+
 	inletCylinder
         {
             mode inside;
