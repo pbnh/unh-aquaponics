@@ -41,7 +41,7 @@ geometry
     {
         type searchableCylinder;
         point1 (0.1397 0.1397 0);
-        point2 (0.1397 0.1397 -0.0254);
+        point2 (0.1397 0.1397 -0.001);
 	      radius 0.0127;
     }
 
@@ -50,7 +50,7 @@ geometry
     {
         type searchableCylinder;
         point1 (0 0.1397 0.2286);
-        point2 (-0.0254 0.1397 0.2286);
+        point2 (-0.001 0.1397 0.2286);
 	      radius 0.0127;
     }
 };
@@ -120,6 +120,19 @@ castellatedMeshControls
             // Surface-wise min and max refinement level
             level (2 2);
         }
+
+        outlet
+        {
+            level (2 2);
+            patchInfo { type patch; }
+        }
+
+        inlet
+        {
+            level (2 2);
+            patchInfo { type patch; }
+        }
+
     }
 
     resolveFeatureAngle 30;
@@ -140,13 +153,13 @@ castellatedMeshControls
 
     refinementRegions
     {
-        outletCylinder
+        outlet
         {
             mode inside;
             levels ((1E15 3));
         }
 
-	inletCylinder
+	      inlet
         {
             mode inside;
             levels ((1E15 3));
