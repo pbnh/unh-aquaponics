@@ -1,4 +1,4 @@
-solid water
+solid patch0
    facet normal -1.000000e+000 0.000000e+000 0.000000e+000
       outer loop
          vertex 0.000000e+000 0.000000e+000 3.048000e-001
@@ -616,7 +616,7 @@ solid water
       endloop
    endfacet
 
-solid outlet
+solid patch1
    facet normal 0.000000e+000 0.000000e+000 -1.000000e+000
       outer loop
          vertex 1.460500e-001 1.506985e-001 0.000000e+000
@@ -857,7 +857,7 @@ solid outlet
    endfacet
 endsolid
 
-solid inlet
+solid patch2
    facet normal -1.000000e+000 0.000000e+000 0.000000e+000
       outer loop
          vertex 0.000000e+000 1.287015e-001 2.349500e-001

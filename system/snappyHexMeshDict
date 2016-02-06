@@ -34,6 +34,12 @@ geometry
     {
         type triSurfaceMesh;
         name water;
+        regions
+        {
+            patch0 { name water_body; }
+            patch1 { name outlet; }
+            patch2 { name inlet; }
+        }
     }
 
     //- Refine a bit extra around the small centre hole
@@ -119,20 +125,27 @@ castellatedMeshControls
         {
             // Surface-wise min and max refinement level
             level (2 2);
-        }
+            regions
+            {
+                patch0
+                {
+                    level (2 2);
+                    patchInfo { type wall; }
+                }
 
-        outlet
-        {
-            level (2 2);
-            patchInfo { type patch; }
-        }
+                patch1
+                {
+                    level (2 2);
+                    patchInfo { type patch; }
+                }
 
-        inlet
-        {
-            level (2 2);
-            patchInfo { type patch; }
+                patch2
+                {
+                    level (2 2);
+                    patchInfo { type patch; }
+                }
+            }
         }
-
     }
 
     resolveFeatureAngle 30;
@@ -153,13 +166,7 @@ castellatedMeshControls
 
     refinementRegions
     {
-        outlet
-        {
-            mode inside;
-            levels ((1E15 3));
-        }
-
-	      inlet
+        water
         {
             mode inside;
             levels ((1E15 3));
