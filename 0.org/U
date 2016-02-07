@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-Uinlet          (0 1 0);
+//Uinlet          (0 1 0);
 
 dimensions      [0 1 -1 0 0 0 0];
 
@@ -25,13 +25,13 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform $Uinlet;
+        value           uniform (0.0623 0 0);
     }
 
     outlet
     {
         type            pressureInletOutletVelocity;
-        value           uniform $Uinlet;
+        value           uniform (0 0 -0.0623);
     }
 
     water_body
