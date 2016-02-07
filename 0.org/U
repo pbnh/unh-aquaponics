@@ -34,9 +34,10 @@ boundaryField
         value           uniform $Uinlet;
     }
 
-    "slip.*"
+    water_body
     {
-        type            slip;
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
 
     #includeEtc "caseDicts/setConstraintTypes"

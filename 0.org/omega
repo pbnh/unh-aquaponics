@@ -35,9 +35,10 @@ boundaryField
         value           uniform $omegaInlet;
     }
 
-    "slip.*"
+    water_body
     {
-        type            slip;
+      type            omegaWallFunction;
+      value           $internalField;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"

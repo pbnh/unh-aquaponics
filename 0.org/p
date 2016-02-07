@@ -31,9 +31,9 @@ boundaryField
         value           uniform 0;
     }
 
-    "slip.*"
+    water_body
     {
-        type            slip;
+        type            zeroGradient;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
