@@ -124,24 +124,24 @@ castellatedMeshControls
         water
         {
             // Surface-wise min and max refinement level
-            level (2 2);
+            level (0 0); // 2 2 to 0 0, others were all 2 2
             regions
             {
                 patch0
                 {
-                    level (2 2);
+                    level (1 1);
                     patchInfo { type wall; }
                 }
 
                 patch1
                 {
-                    level (2 2);
+                    level (1 1);
                     patchInfo { type patch; }
                 }
 
                 patch2
                 {
-                    level (2 2);
+                    level (1 1);
                     patchInfo { type patch; }
                 }
             }
@@ -166,11 +166,11 @@ castellatedMeshControls
 
     refinementRegions
     {
-        water
-        {
-            mode inside;
-            levels ((1E15 3));
-        }
+        // water
+        // {
+        //     mode inside;
+        //     levels ((1E15 3));
+        // }  commented it all out
     }
 
 

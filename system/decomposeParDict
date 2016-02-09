@@ -17,7 +17,7 @@ FoamFile
 
 numberOfSubdomains 4;
 
-method          ptscotch; //simple;
+method          scotch; //simple;
 
 simpleCoeffs
 {
@@ -27,24 +27,15 @@ simpleCoeffs
 
 hierarchicalCoeffs
 {
-    n               (1 1 1);
+    n               ( 1 1 1 );
     delta           0.001;
     order           xyz;
 }
 
-metisCoeffs
-{
-    processorWeights ( 1 1 1 1 );
-}
-
 manualCoeffs
 {
-    dataFile        "";
+    dataFile        "cellDecomposition";
 }
-
-distributed     no;
-
-roots           ( );
 
 
 // ************************************************************************* //
