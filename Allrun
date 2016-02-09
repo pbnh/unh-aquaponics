@@ -10,7 +10,23 @@ cp -rf 0.org 0
 
 runApplication blockMesh
 runApplication surfaceFeatureExtract
-runApplication snappyHexMesh -overwrite
-runApplication createPatch -overwrite
 
-runApplication $(getApplication)
+
+if [ "$1" = "-parallel" ]
+    then
+    nProc=$(getNumberOfProcessors)
+    runApplication decomposePar
+    runParallel snappyHexMesh $nProc -overwrite
+    runParallel createPatch $nProc -overwrite
+    ls -d processor* | xargs -I {} rm -rf ./{}/0
+    ls -d processor* | xargs -I {} cp -r 0.org ./{}/0
+    runParallel $(getApplication) $nProc
+    runApplication reconstructParMesh -constant
+    runApplication reconstructPar -latestTime
+else
+    runApplication snappyHexMesh -overwrite
+    runApplication createPatch -overwrite
+    runApplication $(getApplication)
+fi
+
+# runApplication $(getApplication)
