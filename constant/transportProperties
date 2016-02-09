@@ -16,6 +16,22 @@ FoamFile
 
 transportModel  Newtonian;
 
-nu              [0 2 -1 0 0 0 0] 1.5e-05;
+nu              nu [ 0 2 -1 0 0 0 0 ] 0.355e-03; //Dynamic Viscosity (Pa.s) was 1e-05 for Air
+
+CrossPowerLawCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 1e-06;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 1e-06;
+    m               m [ 0 0 1 0 0 0 0 ] 1;
+    n               n [ 0 0 0 0 0 0 0 ] 1;
+}
+
+BirdCarreauCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 1e-06;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 1e-06;
+    k               k [ 0 0 1 0 0 0 0 ] 0;
+    n               n [ 0 0 0 0 0 0 0 ] 1;
+}
 
 // ************************************************************************* //

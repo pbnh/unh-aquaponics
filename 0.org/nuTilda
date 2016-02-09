@@ -1,8 +1,8 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  3.0.0                                 |
-|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|  \\    /   O peration     | Version:  2.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 FoamFile
@@ -10,38 +10,30 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    object      k;
+    object      nuTilda;        // nuTilda is the "Kinematic Turbulent Viscosity" 
+				// This is not needed for k-EPSILON model, only K-Omega
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-kInlet          0.005; //was .02
+dimensions      [0 2 -1 0 0 0 0];
 
-dimensions      [0 2 -2 0 0 0 0];
-
-internalField   uniform $kInlet;
+internalField   uniform 0;
 
 boundaryField
 {
-    inlet
+    water_body      
     {
-        type            fixedValue;
-        value           uniform $kInlet;
+        type            zeroGradient;
     }
-
-    outlet
+    inlet      
     {
-        type            inletOutlet;
-        inletValue      uniform $kInlet;
-        value           uniform $kInlet;
-    }
-
-    water_body
+        type            fixedValue;         
+	value		uniform 0;
+    }	
+    outlet    
     {
-      type            kqRWallFunction;
-      value           uniform $kInlet;
+        type            zeroGradient;         
     }
-
-    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //
