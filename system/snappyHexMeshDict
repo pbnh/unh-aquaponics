@@ -135,13 +135,13 @@ castellatedMeshControls
 
                 patch1
                 {
-                    level (1 1);
+                    level (2 2);
                     patchInfo { type patch; }
                 }
 
                 patch2
                 {
-                    level (1 1);
+                    level (2 2);
                     patchInfo { type patch; }
                 }
             }
