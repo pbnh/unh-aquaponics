@@ -5,40 +5,13 @@
 |   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
-{
-    version     2.0;
-    format      ascii;
-    class       volScalarField;
-    object      p;
-}
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#include        "include/initialConditions"
-
-dimensions      [0 2 -2 0 0 0 0];
-
-internalField   uniform $pressure;
-
-boundaryField
-{
-    inlet
-    {
-        type            zeroGradient;
-    }
-
-    outlet
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-
-    water_body
-    {
-        type            zeroGradient;
-    }
-
-    #includeEtc "caseDicts/setConstraintTypes"
-}
+flowVelocityX        (0.0488 0 0);
+flowVelocityZ	     (0 0 -0.0488);
+zeroVector 	     (0 0 0);
+pressure             0;
+turbulentKE          .02; //0.0000001653715384 //.02
+turbulentOmega       10; //0.4213209648 //10
+#inputMode           merge
 
 // ************************************************************************* //

@@ -14,30 +14,34 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-//Uinlet          (0 1 0);
+#include        "include/initialConditions"
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (0 0 0);
+internalField   uniform $zeroVector;
 
 boundaryField
 {
     inlet
     {
         type            fixedValue;
-        value           uniform (0.0488 0 0);
+        value           uniform $flowVelocityX;
     }
 
     outlet
     {
-        type            pressureInletOutletVelocity;
-        value           uniform (0 0 -0.0488);
+	type		pressureInletOutletVelocity;
+	value		uniform $flowVelocityZ;
+
+        //type 		inletOutlet;
+	//inletValue 	uniform $zeroVector;
+        //value           uniform $flowVelocityZ;
     }
 
     water_body
     {
         type            fixedValue;
-        value           uniform (0 0 0);
+        value           uniform $zeroVector;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
