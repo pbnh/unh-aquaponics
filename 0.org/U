@@ -30,7 +30,7 @@ boundaryField
 
     outlet
     {
-        type            pressureInletOutletVelocity;
+        type            pressureInletOutletVelocity; //        type            zeroGradient; or outletInlet
         value           uniform (0 0 -0.0488);
     }
 
