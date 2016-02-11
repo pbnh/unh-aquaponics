@@ -19,7 +19,11 @@ zeroVector 	     (0 0 0);
 pressure             0;
 turbulentKE          0.0000001653715384; //.02
 turbulentOmega       0.4213209648; //10
+<<<<<<< HEAD
 >>>>>>> origin/includeFolder
+=======
+>>>>>>> includeFolder
+>>>>>>> 18c325701ff76c2f712dfbba0f58b611384bf2db
 #inputMode           merge
 
 // ************************************************************************* //

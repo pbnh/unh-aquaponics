@@ -39,7 +39,11 @@ boundaryField
         //value           uniform $flowVelocityZ;
 =======
         type            zeroGradient;
+<<<<<<< HEAD
 >>>>>>> origin/includeFolder
+=======
+>>>>>>> includeFolder
+>>>>>>> 18c325701ff76c2f712dfbba0f58b611384bf2db
     }
 
     water_body
@@ -49,7 +53,11 @@ boundaryField
         value           uniform $zeroVector;
 =======
         value           $internalField;
+<<<<<<< HEAD
 >>>>>>> origin/includeFolder
+=======
+>>>>>>> includeFolder
+>>>>>>> 18c325701ff76c2f712dfbba0f58b611384bf2db
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
