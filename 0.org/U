@@ -30,18 +30,26 @@ boundaryField
 
     outlet
     {
+<<<<<<< HEAD
 	type		pressureInletOutletVelocity;
 	value		uniform $flowVelocityZ;
 
         //type 		inletOutlet;
 	//inletValue 	uniform $zeroVector;
         //value           uniform $flowVelocityZ;
+=======
+        type            zeroGradient;
+>>>>>>> includeFolder
     }
 
     water_body
     {
         type            fixedValue;
+<<<<<<< HEAD
         value           uniform $zeroVector;
+=======
+        value           $internalField;
+>>>>>>> includeFolder
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
