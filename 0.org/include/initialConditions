@@ -7,19 +7,11 @@
 \*---------------------------------------------------------------------------*/
 
 flowVelocityX        (0.0488 0 0);
-<<<<<<< HEAD
-flowVelocityZ	     (0 0 -0.0488);
-zeroVector 	     (0 0 0);
-pressure             0;
-turbulentKE          .02; //0.0000001653715384 //.02
-turbulentOmega       10; //0.4213209648 //10
-=======
 //flowVelocityZ	     (0 0 -0.0488);
 zeroVector 	     (0 0 0);
 pressure             0;
 turbulentKE          0.0000001653715384; //.02
 turbulentOmega       0.4213209648; //10
->>>>>>> includeFolder
 #inputMode           merge
 
 // ************************************************************************* //
