@@ -1,0 +1,60 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      streamLines;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+streamLines
+
+{
+
+type streamLine;
+
+outputControl outputTime;
+
+setFormat vtk; //gnuplot; //xmgr; //raw; //jplot; //csv; //ensight;
+
+UName U;
+
+trackForward true;
+
+fields (p U k);
+
+lifeTime 10000;
+
+nSubCycle 5;
+
+cloudName particleTracks;
+
+seedSampleSet uniform; //cloud;//triSurfaceMeshPointSet;
+
+uniformCoeffs
+
+{
+
+type uniform;
+
+axis x; //distance;
+
+start (0 .1397 .2286);
+
+end (.2794 .1397 .2286);
+
+nPoints 50;
+
+}
+
+}
+
+// ************************************************************************* //
+
