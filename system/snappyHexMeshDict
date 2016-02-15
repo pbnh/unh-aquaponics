@@ -55,9 +55,49 @@ geometry
     inlet
     {
         type searchableCylinder;
-        point1 (0.0508 0.0508 0.3048);
-        point2 (0.0508 0.0508 0.3302);
+        point1 (0.0508 0.2286 0.3048);
+        point2 (0.0508 0.2286 0.3302);
 	      radius 0.0127;
+    }
+
+    jet1
+    {
+        type searchableCylinder;
+        point1 (0.0635 0.2286 0.3002);
+        point2 (0.0635 0.2286 0.3004);
+	      radius 0.00119062;
+    }
+
+    jet2
+    {
+        type searchableCylinder;
+        point1 (0.0635 0.2286 0.2702);
+        point2 (0.0635 0.2286 0.2704);
+	      radius 0.00119062;
+    }
+
+    jet3
+    {
+        type searchableCylinder;
+        point1 (0.0635 0.2286 0.2402);
+        point2 (0.0635 0.2286 0.2404);
+	      radius 0.00119062;
+    }
+
+    jet4
+    {
+        type searchableCylinder;
+        point1 (0.0635 0.2286 0.2102);
+        point2 (0.0635 0.2286 0.2104);
+	      radius 0.00119062;
+    }
+
+    jet5
+    {
+        type searchableCylinder;
+        point1 (0.0635 0.2286 0.1802);
+        point2 (0.0635 0.2286 0.1804);
+	      radius 0.00119062;
     }
 };
 
