@@ -6,7 +6,7 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-flowVelocityX        (0.0664 0 0);
+flowVelocityX        (0 0 -0.0664);
 //flowVelocityZ	     (0 0 -0.0488);
 zeroVector 	         (0 0 0);
 pressure             0;
