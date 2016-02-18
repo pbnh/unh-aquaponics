@@ -182,6 +182,7 @@ castellatedMeshControls
                 {
                     level (2 2);
                     patchInfo { type wall; }
+                    gapLevelIncrement 2;
                 }
 
                 patch1
@@ -199,7 +200,7 @@ castellatedMeshControls
         }
     }
 
-    resolveFeatureAngle 30;
+    resolveFeatureAngle 200;
 
 
     // Region-wise refinement
