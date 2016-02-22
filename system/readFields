@@ -10,57 +10,21 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      fvSchemes;
+    object      streamLines;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-ddtSchemes
-{
-    default         Euler;
-}
+// ************************************************************************* //
 
-gradSchemes
-{
-    default         Gauss linear;
+readFields
 
-    limited         cellLimited Gauss linear 1;
-    grad(U)         $limited;
-    grad(k)         $limited;
-    grad(omega)     $limited;
-}
+{functionObjectLibs ("libfieldFunctionObjects.so");
 
-divSchemes
-{
-    default         none;
+type readFields;
 
-    div(phi,U)      bounded Gauss linearUpwind unlimited;
+fields (p U k);
 
-    turbulence      bounded Gauss linearUpwind limited;
-    div(phi,k)      $turbulence;
-    div(phi,omega)  $turbulence;
-    div(phi,epsilon) $turbulence;
-    div((nuEff*dev(T(grad(U))))) Gauss linear;
-    div((nuEff*dev2(T(grad(U))))) Gauss linear;
-}
-
-laplacianSchemes
-{
-    default         Gauss linear corrected;
-}
-
-interpolationSchemes
-{
-    default         linear;
-}
-
-snGradSchemes
-{
-    default         corrected;
-}
-
-wallDist
-{
-    method meshWave;
 }
 
 // ************************************************************************* //
+

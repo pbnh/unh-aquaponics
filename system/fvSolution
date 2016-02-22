@@ -28,6 +28,13 @@ solvers
         relTol          1e-6; //0.1
     }
 
+    pFinal
+    {
+        $p;
+        tolerance       1e-06;
+        relTol          0;
+    }
+
     "(U|k|omega|epsilon)"
     {
         solver          smoothSolver;
@@ -37,26 +44,35 @@ solvers
     }
 }
 
-SIMPLE
+// SIMPLE
+// {
+//     nNonOrthogonalCorrectors 0;
+//     consistent      yes;
+//
+//     residualControl
+//     {
+//         U                   1e-4; //4
+//         p                   1e-3; //3
+//         "(k|epsilon|omega)" 1e-3; //3
+//     }
+// }
+//
+// relaxationFactors
+// {
+//     equations
+//     {
+//         U                   0.7; //0.95
+//         "(k|omega|epsilon)" 0.7; //0.95
+//     }
+// }
+
+PISO
 {
+    nCorrectors     2;
     nNonOrthogonalCorrectors 0;
-    consistent      yes;
-
-    residualControl
-    {
-        U                   1e-4; //4
-        p                   1e-3; //3
-        "(k|epsilon|omega)" 1e-3; //3
-    }
+    pRefCell        0;
+    pRefValue       0;
 }
 
-relaxationFactors
-{
-    equations
-    {
-        U                   0.7; //0.95
-        "(k|omega|epsilon)" 0.7; //0.95
-    }
-}
 
 // ************************************************************************* //
