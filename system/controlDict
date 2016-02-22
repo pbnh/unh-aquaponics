@@ -93,10 +93,10 @@ functions
         uniformCoeffs
         {
             type        uniform;
-            axis        x;  //distance;
+            axis        xyz;  //distance;
 
-            start (0 .1397 .2286);
-	    end (.2794 .1397 .2286);
+            start (0 .1651 .2286);
+	    end (.1651 .1651 0);
 	    nPoints 100;
         }
     }
