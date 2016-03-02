@@ -1,0 +1,51 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFormat vtk;
+setFormat raw;
+interpolationScheme cellPoint;
+fields
+(
+p
+U
+);
+
+sets();
+
+surfaces
+(
+constantPlane
+{
+type plane;
+type plane;
+basePoint (0.1397 0.1397 0.00001);
+normalVector (0 0 -1);
+
+//triSurfaceSampling
+  //  {
+        // Sampling on triSurface
+    //    type        sampledTriSurfaceMesh;
+      //  surface     water.stl;
+        //source      boundaryFaces;  // sample cells or boundaryFaces
+        //interpolate true;
+}
+);
+
+
+
+
+// ************************************************************************* //
