@@ -16,7 +16,9 @@ FoamFile
 
 application     pisoFoam;
 
-startFrom       startTime;
+//firstTime	100;
+
+//startFrom       startTime;
 
 startTime       0;
 
