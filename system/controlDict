@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     simpleFoam;
+application     pisoFoam;
 
 startFrom       startTime;
 
@@ -22,15 +22,15 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         1000;
+endTime         200;
 
 deltaT          1;
 
-writeControl    runTime; //timeStep
+writeControl    timeStep; //timeStep
 
-writeInterval   50;
+writeInterval   10;
 
-//purgeWrite      0;
+purgeWrite      0;
 
 writeFormat     ascii;
 
@@ -49,6 +49,7 @@ functions
     streamLines
     {
         type            streamLine;
+        enabled         off;
 
         // Where to load it from (if not already in solver)
         functionObjectLibs ("libfieldFunctionObjects.so");
@@ -57,7 +58,7 @@ functions
         outputControl   outputTime;
         // outputInterval 10;
 
-        setFormat       vtk; //gnuplot, raw etc. See sampleDict.
+        setFormat       csv; //gnuplot, raw etc. See sampleDict.
 
         // Velocity field to use for tracking.
         UName U;
@@ -93,13 +94,40 @@ functions
         uniformCoeffs
         {
             type        uniform;
-            axis        x;  //distance;
+            axis        xyz;  //distance;
 
-            start (0 .1397 .2286);
-	    end (.2794 .1397 .2286);
+            start (0 .1651 .2286);
+	    end (.1651 .1651 0);
 	    nPoints 100;
         }
     }
+
+    dyeTransport
+    {
+        type            scalarTransport;
+        functionObjectLibs ("libutilityFunctionObjects.so");
+        outputControl   outputTime;
+        resetOnStartUp  false;
+        autoSchemes     true;
+        fvOptions
+        {
+            S-01
+            {
+                type scalarExplicitSetValue;
+                active true;
+                selectionMode cellZone;
+                cellZone sampleInlet;
+                scalarExplicitSetValueCoeffs
+                {
+                    injectionRate
+                    {
+                        S 1;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 // ************************************************************************* //
