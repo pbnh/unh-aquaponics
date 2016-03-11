@@ -28,7 +28,7 @@ deltaT          1;
 
 writeControl    timeStep; //timeStep
 
-writeInterval   5;
+writeInterval   10;
 
 purgeWrite      0;
 
@@ -100,6 +100,40 @@ functions
 	    nPoints 100;
         }
     }
+
+S
+{
+type scalarTransport;
+outputControl outputTime;
+resetOnStartUp false;
+autoSchemes true;
+fvOptions 
+{
+S-01
+{
+type scalarExplicitSetValue;
+active true;
+selectionMode cellZone;
+cellZone sampleInlet;
+scalarExplicitSetValueCoeffs
+{
+injectionRate
+{
+S 1;
+}
+}
+}
+};
+}
+
+
+libs
+(
+"libOpenFOAM.so"
+"libutilityFunctionObjects.so"
+"libswakFunctionObjects.so"
+);
+
 }
 
 // ************************************************************************* //
