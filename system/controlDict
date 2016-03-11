@@ -49,6 +49,7 @@ functions
     streamLines
     {
         type            streamLine;
+        enabled         off;
 
         // Where to load it from (if not already in solver)
         functionObjectLibs ("libfieldFunctionObjects.so");
@@ -101,38 +102,31 @@ functions
         }
     }
 
-S
-{
-type scalarTransport;
-outputControl outputTime;
-resetOnStartUp false;
-autoSchemes true;
-fvOptions 
-{
-S-01
-{
-type scalarExplicitSetValue;
-active true;
-selectionMode cellZone;
-cellZone sampleInlet;
-scalarExplicitSetValueCoeffs
-{
-injectionRate
-{
-S 1;
-}
-}
-}
-};
-}
-
-
-libs
-(
-"libOpenFOAM.so"
-"libutilityFunctionObjects.so"
-"libswakFunctionObjects.so"
-);
+    dyeTransport
+    {
+        type            scalarTransport;
+        functionObjectLibs ("libutilityFunctionObjects.so");
+        outputControl   outputTime;
+        resetOnStartUp  false;
+        autoSchemes     true;
+        fvOptions
+        {
+            S-01
+            {
+                type scalarExplicitSetValue;
+                active true;
+                selectionMode cellZone;
+                cellZone sampleInlet;
+                scalarExplicitSetValueCoeffs
+                {
+                    injectionRate
+                    {
+                        S 1;
+                    }
+                }
+            }
+        }
+    }
 
 }
 
