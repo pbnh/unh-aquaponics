@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         200;
+endTime         20; //200
 
 deltaT          1;
 
@@ -49,7 +49,7 @@ functions
     streamLines
     {
         type            streamLine;
-        enabled         off;
+        enabled         on;
 
         // Where to load it from (if not already in solver)
         functionObjectLibs ("libfieldFunctionObjects.so");
@@ -103,6 +103,23 @@ functions
     }
 
     #include "scalarTransport"
+
+    dyeTransport
+    {
+        type            scalarTransport;
+        functionObjectLibs ("libutilityFunctionObjects.so");
+	enabled 	true;        
+	outputControl   outputTime;
+	write interval  1;
+        resetOnStartUp  false;
+        autoSchemes     true;
+        write 		true;
+	log		true;
+	
+	DT 10e-9;
+
+	#includeEtc "caseDicts/postProcessing/scalarTransport/scalarTransportDict.cfg"
+    }
 }
 
 // ************************************************************************* //
