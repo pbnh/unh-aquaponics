@@ -42,7 +42,15 @@ solvers
         tolerance       1e-6; //6
         relTol          1e-6; //0.1
     }
-}
+
+T
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-6;
+        relTol          0;
+    }
+
 
 // SIMPLE
 // {
@@ -65,6 +73,7 @@ solvers
 //         "(k|omega|epsilon)" 0.7; //0.95
 //     }
 // }
+}
 
 PISO
 {
@@ -74,5 +83,17 @@ PISO
     pRefValue       0;
 }
 
+
+
+
+relaxationFactors
+{
+    fields
+    {
+    }
+    equations
+    {
+    }
+}
 
 // ************************************************************************* //
