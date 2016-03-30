@@ -44,6 +44,10 @@ timePrecision   6;
 
 runTimeModifiable true;
 
+libs  (
+      "libutilityFunctionObjects.so"
+      );
+
 functions
 {
     streamLines
@@ -97,29 +101,61 @@ functions
             axis        xyz;  //distance;
 
             start (0 .1651 .2286);
-	    end (.1651 .1651 0);
-	    nPoints 100;
+	          end (.1651 .1651 0);
+	          nPoints 100;
         }
     }
 
-    #include "scalarTransport"
+    //#include "scalarTransport"
 
-    dyeTransport
-    {
-        type            scalarTransport;
-        functionObjectLibs ("libutilityFunctionObjects.so");
-	enabled 	true;        
-	outputControl   outputTime;
-	write interval  1;
-        resetOnStartUp  false;
-        autoSchemes     true;
-        write 		true;
-	log		true;
-	
-	DT 10e-9;
+  //   S
+  //   {
+  //       type            scalarTransport;
+  //       functionObjectLibs ("libutilityFunctionObjects.so");
+	//       enabled 	true;
+	//       outputControl   outputTime;
+	//       setFormat       csv;
+	//       write interval  1;
+  //       resetOnStartUp  false;
+  //       autoSchemes     true;
+  //       write 		true;
+	//       log		true;
+  //
+	// DT 10e-9;
+	// fvOptions {};
+  //
+	// #includeEtc "caseDicts/postProcessing/scalarTransport/scalarTransportDict.cfg"
+  //   }
 
-	#includeEtc "caseDicts/postProcessing/scalarTransport/scalarTransportDict.cfg"
-    }
+  S
+      {
+          type            scalarTransport;
+          outputControl   outputTime;
+          resetOnStartUp  false;
+          autoSchemes     true;
+          fvOptions
+          {
+               SetS
+               {
+               type            scalarExplicitSetValue;
+               active          true;
+
+
+               scalarExplicitSetValueCoeffs
+                   {
+                     selectionMode   points;
+                     points
+                     (
+                       (0.1397 0.1397 0)
+                     );
+                       injectionRate
+                       {
+                           S   1.0;
+                       }
+                   }
+               }
+          };
+      }
 }
 
 // ************************************************************************* //
