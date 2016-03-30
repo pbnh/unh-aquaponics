@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         10;
+endTime         20;
 
 deltaT          0.05;
 
@@ -49,6 +49,7 @@ functions
     streamLines
     {
         type            streamLine;
+        enabled         off;
 
         // Where to load it from (if not already in solver)
         functionObjectLibs ("libfieldFunctionObjects.so");
