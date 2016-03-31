@@ -124,7 +124,7 @@ castellatedMeshControls
         water
         {
             // Surface-wise min and max refinement level
-            level (0 0); // 2 2 to 0 0, others were all 2 2
+            level (1 1); // 2 2 to 0 0, others were all 2 2
             regions
             {
                 patch0
