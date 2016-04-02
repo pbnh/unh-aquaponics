@@ -141,14 +141,14 @@ castellatedMeshControls
 
                 patch2
                 {
-                    level (3 3);
+                    level (2 2);
                     patchInfo { type patch; }
                 }
             }
         }
     }
 
-    resolveFeatureAngle 200; //30
+    resolveFeatureAngle 30; //30
 
 
     // Region-wise refinement
