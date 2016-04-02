@@ -55,8 +55,8 @@ geometry
     inlet
     {
         type searchableCylinder;
-        point1 (0 0.1397 0.2286);
-        point2 (-0.001 0.1397 0.2286);
+        point1 (-.001 0.24765 0.26289);
+        point2 (0 0.24765 0.26289);
 	      radius 0.0127;
     }
 };
@@ -141,14 +141,14 @@ castellatedMeshControls
 
                 patch2
                 {
-                    level (2 2);
+                    level (3 3);
                     patchInfo { type patch; }
                 }
             }
         }
     }
 
-    resolveFeatureAngle 30;
+    resolveFeatureAngle 200; //30
 
 
     // Region-wise refinement
