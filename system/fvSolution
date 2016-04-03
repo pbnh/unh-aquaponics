@@ -44,35 +44,35 @@ solvers
     }
 }
 
-// SIMPLE
-// {
-//     nNonOrthogonalCorrectors 0;
-//     consistent      yes;
-//
-//     residualControl
-//     {
-//         U                   1e-4; //4
-//         p                   1e-3; //3
-//         "(k|epsilon|omega)" 1e-3; //3
-//     }
-// }
-//
-// relaxationFactors
-// {
-//     equations
-//     {
-//         U                   0.7; //0.95
-//         "(k|omega|epsilon)" 0.7; //0.95
-//     }
-// }
-
-PISO
+SIMPLE
 {
-    nCorrectors     2;
     nNonOrthogonalCorrectors 0;
-    pRefCell        0;
-    pRefValue       0;
+    consistent      yes;
+
+    residualControl
+    {
+        U                   1e-4; //4
+        p                   1e-3; //3
+        "(k|epsilon|omega)" 1e-3; //3
+    }
 }
+
+relaxationFactors
+{
+    equations
+    {
+        U                   0.7; //0.95
+        "(k|omega|epsilon)" 0.7; //0.95
+    }
+}
+
+// PISO
+// {
+//     nCorrectors     2;
+//     nNonOrthogonalCorrectors 0;
+//     pRefCell        0;
+//     pRefValue       0;
+// }
 
 
 // ************************************************************************* //
