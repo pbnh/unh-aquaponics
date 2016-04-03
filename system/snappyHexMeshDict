@@ -54,60 +54,68 @@ geometry
     }
 
 //- Refine a bit extra around the small centre hole
-    inlet
+    inletouter
     {
         type searchableCylinder;
-        point1 (0.0508 0.2286 0.3048);
-        point2 (0.0508 0.2286 0.3302);
-	      radius 0.0127;
+        point1 (0.031750 0.2540 0.0031750);
+        point2 (0.031750 0.2540 0.2540);
+	      radius 0.0111125;
     }
 
-    jet1
+    inletinner
     {
         type searchableCylinder;
-        point1 (0.062915 0.2286 0.154912);
-        point2 (0.065556 0.2286 0.154912);
-	      radius 0.00119062;
+        point1 (0.031750 0.2540 0.00635);
+        point2 (0.031750 0.2540 0.25654);
+	      radius 0.0095250;
     }
 
-    jet2
-    {
-        type searchableCylinder;
-        point1 (0.062915 0.2286 0.184884);
-        point2 (0.065556 0.2286 0.184884);
-	      radius 0.00119062;
-    }
-
-    jet3
-    {
-        type searchableCylinder;
-        point1 (0.062915 0.2286 0.214856);
-        point2 (0.065556 0.2286 0.214856);
-	      radius 0.00119062;
-    }
-
-    jet4
-    {
-        type searchableCylinder;
-        point1 (0.062915 0.2286 0.244828);
-        point2 (0.065556 0.2286 0.244828);
-	      radius 0.00119062;
-    }
-
-    jet5
-    {
-        type searchableCylinder;
-        point1 (0.062915 0.2286 0.274800);
-        point2 (0.065556 0.2286 0.274800);
-	      radius 0.00119062;
-    }
-
-    allbox
-    {
-      type  searchableBox;
-      min (0.062 0.228 0.15);
-      max (0.066 0.229 0.30);
-    }
+    // jet1
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.062915 0.2286 0.154912);
+    //     point2 (0.065556 0.2286 0.154912);
+	  //     radius 0.00119062;
+    // }
+    //
+    // jet2
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.062915 0.2286 0.184884);
+    //     point2 (0.065556 0.2286 0.184884);
+	  //     radius 0.00119062;
+    // }
+    //
+    // jet3
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.062915 0.2286 0.214856);
+    //     point2 (0.065556 0.2286 0.214856);
+	  //     radius 0.00119062;
+    // }
+    //
+    // jet4
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.062915 0.2286 0.244828);
+    //     point2 (0.065556 0.2286 0.244828);
+	  //     radius 0.00119062;
+    // }
+    //
+    // jet5
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.062915 0.2286 0.274800);
+    //     point2 (0.065556 0.2286 0.274800);
+	  //     radius 0.00119062;
+    // }
+    //
+    // allbox
+    // {
+    //   type  searchableBox;
+    //   min (0.062 0.228 0.15);
+    //   max (0.066 0.229 0.30);
+    // }
 
 
 };
