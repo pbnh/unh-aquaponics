@@ -99,7 +99,7 @@ functions
             type        uniform;
             axis        xyz;  //distance;
 
-            start (0 .24257 .24257);
+            start (0 .24765 .24257);
 	    end (.1397 .1397 0);
 	    nPoints 100;
         }
