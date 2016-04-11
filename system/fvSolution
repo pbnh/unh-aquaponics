@@ -24,8 +24,8 @@ solvers
         agglomerator    faceAreaPair;
         nCellsInCoarsestLevel 10;
         mergeLevels     1;
-        tolerance       1e-6; //6
-        relTol          1e-6; //0.1
+        tolerance       1e-4; //6
+        relTol          1e-2; //0.1
     }
 
     pFinal
@@ -39,8 +39,8 @@ solvers
     {
         solver          smoothSolver;
         smoother        symGaussSeidel;
-        tolerance       1e-6; //6
-        relTol          1e-6; //0.1
+        tolerance       1e-4; //6
+        relTol          1e-2;
     }
 }
 
