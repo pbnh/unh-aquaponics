@@ -22,13 +22,21 @@ startTime       0;
 
 stopAt          endTime;
 
+<<<<<<< HEAD
 endTime         20;
+=======
+endTime         500;
+>>>>>>> fb8888c00ff7fe09ebb55add8084ce5b8af83ef7
 
 deltaT          0.05;
 
 writeControl    timeStep; //timeStep
 
+<<<<<<< HEAD
 writeInterval   5;
+=======
+writeInterval   100;
+>>>>>>> fb8888c00ff7fe09ebb55add8084ce5b8af83ef7
 
 purgeWrite      0;
 

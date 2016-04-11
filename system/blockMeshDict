@@ -30,7 +30,11 @@ vertices
 
 blocks
 (
+<<<<<<< HEAD
     hex (0 1 2 3 4 5 6 7) (55 55 60) simpleGrading (1 1 1)
+=======
+    hex (0 1 2 3 4 5 6 7) (100 100 100) simpleGrading (1 1 1)
+>>>>>>> fb8888c00ff7fe09ebb55add8084ce5b8af83ef7
 );
 
 edges
