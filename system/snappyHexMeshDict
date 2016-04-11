@@ -54,7 +54,6 @@ geometry
     }
 
 //- Refine a bit extra around the small centre hole
-<<<<<<< HEAD
     inletouter
     {
         type searchableCylinder;
@@ -117,24 +116,6 @@ geometry
     //   min (0.062 0.228 0.15);
     //   max (0.066 0.229 0.30);
     // }
-
-=======
-    // inletouter
-    // {
-    //     type searchableCylinder;
-    //     point1 (0.031750 0.2540 0.0031750);
-    //     point2 (0.031750 0.2540 0.2540);
-	  //     radius 0.0111125;
-    // }
-    //
-    // inletinner
-    // {
-    //     type searchableCylinder;
-    //     point1 (0.031750 0.2540 0.00635);
-    //     point2 (0.031750 0.2540 0.25654);
-	  //     radius 0.0095250;
-    // }
->>>>>>> fb8888c00ff7fe09ebb55add8084ce5b8af83ef7
 
 };
 
