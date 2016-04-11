@@ -70,19 +70,8 @@ PISO
 {
     nCorrectors     2;
     nNonOrthogonalCorrectors 0;
-<<<<<<< HEAD
     pRefCell        0;
     pRefValue       0;
-=======
-    consistent      yes;
-
-    residualControl
-    {
-        U                   1e-3; //4
-        p                   1e-3; //3
-        "(k|epsilon|omega)" 1e-3; //3
-    }
->>>>>>> fb8888c00ff7fe09ebb55add8084ce5b8af83ef7
 }
 
 
