@@ -54,21 +54,21 @@ geometry
     }
 
 //- Refine a bit extra around the small centre hole
-    inletouter
-    {
-        type searchableCylinder;
-        point1 (0.031750 0.2540 0.0031750);
-        point2 (0.031750 0.2540 0.2540);
-	      radius 0.0111125;
-    }
-
-    inletinner
-    {
-        type searchableCylinder;
-        point1 (0.031750 0.2540 0.00635);
-        point2 (0.031750 0.2540 0.25654);
-	      radius 0.0095250;
-    }
+    // inletouter
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.031750 0.2540 0.0031750);
+    //     point2 (0.031750 0.2540 0.2540);
+	  //     radius 0.0111125;
+    // }
+    //
+    // inletinner
+    // {
+    //     type searchableCylinder;
+    //     point1 (0.031750 0.2540 0.00635);
+    //     point2 (0.031750 0.2540 0.25654);
+	  //     radius 0.0095250;
+    // }
 
     // jet1
     // {

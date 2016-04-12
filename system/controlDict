@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         400;
+endTime         40;
 
 deltaT          1;
 
@@ -30,7 +30,7 @@ writeControl    timeStep; //timeStep
 
 writeInterval   10;
 
-purgeWrite      0;
+//purgeWrite      0;
 
 writeFormat     ascii;
 
@@ -50,7 +50,7 @@ functions
     {
         type            streamLine;
         active          false;
-        enabled         off;
+  //      enabled         off;
 
         // Where to load it from (if not already in solver)
         functionObjectLibs ("libfieldFunctionObjects.so");
