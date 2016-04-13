@@ -55,9 +55,9 @@ geometry
     inlet
     {
         type searchableCylinder;
-        point1 (0 0.1397 0.2286);
-        point2 (-0.001 0.1397 0.2286);
-	      radius 0.0127;
+        point1 (-.001 0.24765 .24257);
+        point2 (0 0.24765 0.24257);
+	      radius 0.01905;
     }
 };
 
@@ -124,7 +124,7 @@ castellatedMeshControls
         water
         {
             // Surface-wise min and max refinement level
-            level (0 0); // 2 2 to 0 0, others were all 2 2
+            level (1 1); // 2 2 to 0 0, others were all 2 2
             regions
             {
                 patch0
@@ -148,7 +148,7 @@ castellatedMeshControls
         }
     }
 
-    resolveFeatureAngle 30;
+    resolveFeatureAngle 30; //30
 
 
     // Region-wise refinement

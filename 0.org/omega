@@ -18,27 +18,27 @@ FoamFile
 
 dimensions      [0 0 -1 0 0 0 0];
 
-internalField   uniform $turbulentOmega;
+//internalField   uniform $turbulentOmega;
 
 boundaryField
 {
     inlet
     {
         type            fixedValue;
-        value           $internalField;
+        value           $turbulentOmegaInitial;
     }
 
     outlet
     {
         type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        inletValue      $turbulentOmegaInitial;
+        value           $turbulentOmegaInitial;
     }
 
     water_body
     {
       type            omegaWallFunction;
-      value           $internalField;
+      value           $turbulentOmegaBoundary;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"

@@ -18,27 +18,27 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform $turbulentKE;
+//internalField   uniform $turbulentKE;
 
 boundaryField
 {
     inlet
     {
         type            fixedValue;
-        value           $internalField;
+        value           $turbulentKEinitial;
     }
 
     outlet
     {
         type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        inletValue      $turbulentKEinitial;
+        value           $turbulentKEinitial;
     }
 
     water_body
     {
       type            kqRWallFunction;
-      value           $internalField;
+      value           $turbulentKEboundary;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
